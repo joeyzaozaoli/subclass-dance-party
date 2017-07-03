@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+  window.audio = new Audio('asset/swan_lake.mp3');
   window.dancers = [];
 
   $('.addDancerButton').on('click', function(event) {
@@ -28,6 +30,17 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    dancers.push(dancer);
+
+    if (audio.paused) {
+      audio.play();
+    }
+  });
+
+  $('.line-up').on('click', function() {
+    for (var i = 0; i < dancers.length; i++) {
+      dancers[i].$node.css({top: "650px"});
+    }
   });
 });
 
