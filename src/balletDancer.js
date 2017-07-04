@@ -9,6 +9,7 @@ BalletDancer.prototype.constructor = BalletDancer;
 
 BalletDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
+  console.log(this.$node.attr('class'));
 
   if (this.$node.hasClass('ballet-dancer-right')) {
     this.$node.removeClass('ballet-dancer-right');

@@ -41,6 +41,12 @@ $(document).ready(function() {
     for (var i = 0, left = 100; i < dancers.length; i++) {
       dancers[i].setPosition(650, left);
       left += 50;
+
+      if (dancers[i].$node.hasClass('ballet-dancer-right')) {
+        dancers[i].$node.removeClass('ballet-dancer-right');
+      } else if (dancers[i].$node.hasClass('ballet-dancer-left')) {
+        dancers[i].$node.removeClass('ballet-dancer-left');
+      }
     }
   });
 });
