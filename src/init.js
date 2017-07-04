@@ -23,7 +23,6 @@ $(document).ready(function() {
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
-
     var dancer = new dancerMakerFunction(
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
@@ -40,7 +39,6 @@ $(document).ready(function() {
 
   $('.lineUpButton').on('click', function() {
     for (var i = 0, left = 100; i < dancers.length; i++) {
-      console.log(dancers[i].$node.css.left);
       dancers[i].setPosition(650, left);
       left += 50;
     }

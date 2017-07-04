@@ -1,4 +1,5 @@
 var BalletDancer = function(top, left, timeBetweenSteps) {
+  timeBetweenSteps = 400;
   Dancer.call(this, top, left, timeBetweenSteps);
   this.$node.append($('<img src="asset/odette.png"></img>'));
 };
@@ -8,6 +9,14 @@ BalletDancer.prototype.constructor = BalletDancer;
 
 BalletDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
-  // this.$node.animate({left: "+=100"}, 1000);
-  // this.$node.animate({left: "-=100"}, 1000);
+
+  if (this.$node.hasClass('ballet-dancer-right')) {
+    this.$node.removeClass('ballet-dancer-right');
+    this.$node.addClass('ballet-dancer-left');
+  } else if (this.$node.hasClass('ballet-dancer-left')) {
+    this.$node.removeClass('ballet-dancer-left');
+    this.$node.addClass('ballet-dancer-right');
+  } else {
+    this.$node.addClass('ballet-dancer-left');
+  }
 };
