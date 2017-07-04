@@ -30,6 +30,7 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+
     dancers.push(dancer);
 
     if (audio.paused) {
@@ -37,9 +38,11 @@ $(document).ready(function() {
     }
   });
 
-  $('.line-up').on('click', function() {
-    for (var i = 0; i < dancers.length; i++) {
-      dancers[i].$node.css({top: "650px"});
+  $('.lineUpButton').on('click', function() {
+    for (var i = 0, left = 100; i < dancers.length; i++) {
+      console.log(dancers[i].$node.css.left);
+      dancers[i].setPosition(650, left);
+      left += 50;
     }
   });
 });
