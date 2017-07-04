@@ -42,10 +42,10 @@ $(document).ready(function() {
       dancers[i].setPosition(650, left);
       left += 50;
 
+      // attempt to make movement uniform upon lining up
       if (dancers[i].$node.hasClass('ballet-dancer-right')) {
         dancers[i].$node.removeClass('ballet-dancer-right');
-      } else if (dancers[i].$node.hasClass('ballet-dancer-left')) {
-        dancers[i].$node.removeClass('ballet-dancer-left');
+        dancers[i].$node.addClass('ballet-dancer-left');
       }
     }
   });
