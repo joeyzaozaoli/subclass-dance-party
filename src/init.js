@@ -41,13 +41,17 @@ $(document).ready(function() {
     for (var i = 0, left = 100; i < dancers.length; i++) {
       dancers[i].setPosition(650, left);
       left += 50;
-
-      // attempt to make movement uniform upon lining up
-      if (dancers[i].$node.hasClass('ballet-dancer-right')) {
-        dancers[i].$node.removeClass('ballet-dancer-right');
-        dancers[i].$node.addClass('ballet-dancer-left');
-      }
+      dancers[i].$node.removeClass('ballet-dancer-left');
+      dancers[i].$node.removeClass('ballet-dancer-right');
+      dancers[i].toDanceInfinitely = false;
     }
+
+    setTimeout(function() {
+      for (var j = 0; j < dancers.length; j++) {
+        dancers[j].toDanceInfinitely = true;
+        dancers[j].step();
+      }
+    }, 2000);
   });
 });
 
