@@ -51,7 +51,7 @@ $(document).ready(function() {
         dancers[j].toDanceInfinitely = true;
         dancers[j].step();
       }
-    }, 2000);
+    }, 1500);
   });
 });
 
